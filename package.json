@@ -1,0 +1,29 @@
+{
+  "name": "gigya-comments-migration",
+  "version": "1.0.0",
+  "description": "Migrate gigya comments to Sportstalk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sportstalk247/gigya-comments-migration.git"
+  },
+  "keywords": [
+    "gigya",
+    "comments",
+    "migration"
+  ],
+  "author": "Sportstalk247",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sportstalk247/gigya-comments-migration/issues"
+  },
+  "homepage": "https://github.com/sportstalk247/gigya-comments-migration#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "sportstalk-sdk": "^3.8.17"
+  }
+}
