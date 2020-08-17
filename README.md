@@ -1,6 +1,6 @@
-#MIGRATING FROM GIGYA COMMENTS TO SPORTSTALK 24/7
+# MIGRATING FROM GIGYA COMMENTS TO SPORTSTALK 24/7
 Gigya Comments is reaching end of life.  [Sportstalk can help!](http://www.sportstalk247.com/gigya.html)
-##Migrating from Gigya to SportsTalk or other providers.
+## Migrating from Gigya to SportsTalk or other providers.
 
 ### Limitations for Gigya Data Migration
 GIGYA does not give you the ability to export a list of who liked each comment. Therefore, the LIKES count for comments cannot be migrated to SportsTalk 24/7.
@@ -12,7 +12,7 @@ As is this migration script will not migrate comments that are in unpublished st
 The users do not need to exist in SportsTalk 24/7 prior to the migration.  **User accounts will be created within your app** for the commenters as comments and streams are created.
 
 
-###Step 1: Export Comment Streams and Comments to a JSON file.
+### Step 1: Export Comment Streams and Comments to a JSON file.
 Gigya groups comments in what it calls "streams".  All comments about the same article, video, or whatever your commenting context is, are grouped together into streams. The first thing you need to do is export a list of all your comment streams.  Once you have done that you can export all of your comments.  The process of exporting commenThank yout streams and the process of exporting comments are nearly identical.  You can do this using Gigya Data Flows. 
 * Create a new data flow to export streams
 * Create a new data flow to export comments
@@ -22,7 +22,7 @@ Gigya groups comments in what it calls "streams".  All comments about the same a
 
 We estimate that it can export approximately 25,000 comments per hour, so when you plan your migration, start by looking at how many comments you have using the Gigya dashboard and make sure to give yourself enough time.  The streams export is typically faster as there are far fewer streams than comments.  
  
-###Step 2: Run the Migration Script provided to import the comments and streams
+### Step 2: Run the Migration Script provided to import the comments and streams
 SportsTalk uses the terminology "Conversation" instead of "Stream". The concept is the same, you are grouping comments into a context.  This script will create a conversation for each stream with your preferred settings.  
 * Create your application in SportsTalk 24/7
 * Configure the config file to specify your application id and api token
@@ -37,16 +37,16 @@ It's OK to run the import more than one time. You can do an initial export in ad
 * Click on the key for the site you want to export Comments from.
 * On the left hand menu, under IdentitySync, select Dataflows.
 
-![Identity Sync Dataflow](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/IdentitySync-DataFlows.jpg)
+![Identity Sync Dataflow](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/IdentitySync-DataFlows.jpg)
 	
 * Click to create a new data flow.
 
-![Create Data Flow](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/2%20-%20Create%20Data%20Flow.jpg)
+![Create Data Flow](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/2%20-%20Create%20Data%20Flow.jpg)
 
 
 * In the pop-up, select empty data flow.
 
-![Create Empty Data Flow ](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/3%20-%20Create%20Empty%20Data%20Flow.jpg)
+![Create Empty Data Flow ](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/3%20-%20Create%20Empty%20Data%20Flow.jpg)
 
 
 * Select SOURCE TAB, paste the source below in, and then save it. 
@@ -125,7 +125,7 @@ This is a sample script to export your streams to an SFTP server. Contact SAP su
 * Gigya will run your scheduled job immediately
 
 
-![Create Export Schedule](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/5%20-%20Create%20Export%20Schedule.jpg)
+![Create Export Schedule](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/5%20-%20Create%20Export%20Schedule.jpg)
 
 
 
@@ -136,16 +136,16 @@ This is a sample script to export your streams to an SFTP server. Contact SAP su
 * Click on the key for the site you want to export Comments from.
 * On the left hand menu, under IdentitySync, select Dataflows.
 
-![Identity Sync Dataflow](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/IdentitySync-DataFlows.jpg)
+![Identity Sync Dataflow](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/IdentitySync-DataFlows.jpg)
 	
 * Click to create a new data flow.
 
-![Create Data Flow](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/2%20-%20Create%20Data%20Flow.jpg)
+![Create Data Flow](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/2%20-%20Create%20Data%20Flow.jpg)
 
 
 * In the pop-up, select empty data flow.
 
-![Create Empty Data Flow ](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/3%20-%20Create%20Empty%20Data%20Flow.jpg)
+![Create Empty Data Flow ](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/3%20-%20Create%20Empty%20Data%20Flow.jpg)
 
 
 * Select SOURCE TAB, paste the source below in, and then save it. 
@@ -210,7 +210,7 @@ Replace the values within {{ }} with your own
 }
 ```
 
-![Click Source and Customize Source](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/4%20-%20Click%20Source%20and%20Customize%20Source.jpg)
+![Click Source and Customize Source](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/4%20-%20Click%20Source%20and%20Customize%20Source.jpg)
 
 #### 2. Create schedule
 * Save and exit back to the Dataflows screen.  
@@ -225,7 +225,7 @@ Replace the values within {{ }} with your own
     * Put your email address in both the emails on success and emails on failure boxes. The export can take a long time to run, for example, 1 hour for every 30,000 comments. Also, the job could fail in which case it will restart automatically.
 * Click the Create Button. Gigya will run the job immediately.
 
-![Create Export Schedule](https://github.com/sportstalk247/gigya-comments-migration/blob/master/img/5%20-%20Create%20Export%20Schedule.jpg)
+![Create Export Schedule](https://github.com/sportstalk247/gigya-comment-migration/blob/master/img/5%20-%20Create%20Export%20Schedule.jpg)
 
 ## Running the migration script
 Before using the provided script you **MUST have followed the above instructions and exported your Gigya data to JSON.**
